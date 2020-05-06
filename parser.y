@@ -31,4 +31,23 @@ extern int yylex();
 
 %%
 
+program
+  : program statement
+  | statement
+  ;
+
+statement
+  : IDENTIFIER EQUALS expression SEMICOLON
+  ;
+
+expression
+  : LPAREN expression RPAREN { }
+  | expression PLUS expression
+  | expression MINUS expression
+  | expression TIMES expression
+  | expression DIVIDEDBY expression
+  | NUMBER
+  | IDENTIFIER
+  ;
+
 %%
