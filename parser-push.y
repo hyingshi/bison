@@ -63,7 +63,8 @@ expression
  * if (a == 2) {
  *   b = 4;
  * }
-
+ *
+ * Bison action for putting together C++ translation:
  * $$ = new std::string("if (" + *$2 + ")\n {" + *$5 + "}");
  */
 
